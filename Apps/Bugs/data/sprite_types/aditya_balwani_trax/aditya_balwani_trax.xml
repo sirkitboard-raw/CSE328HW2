@@ -1,0 +1,483 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<sprite_type>
+    <image_config>SEPARATED</image_config>
+    <width>128</width>
+    <height>128</height>
+    <images_list>
+        <image_file id="1" file_name="aditya_balwani_spin_1.png"/>
+        <image_file id="2" file_name="aditya_balwani_spin_2.png"/>
+        <image_file id="3" file_name="aditya_balwani_spin_3.png"/>
+        <image_file id="4" file_name="aditya_balwani_spin_4.png"/>
+        <image_file id="5" file_name="aditya_balwani_spin_5.png"/>
+        <image_file id="6" file_name="aditya_balwani_spin_6.png"/>
+        <image_file id="7" file_name="aditya_balwani_spin_7.png"/>
+        <image_file id="8" file_name="aditya_balwani_spin_8.png"/>
+        <image_file id="9" file_name="aditya_balwani_spin_9.png"/>
+        <image_file id="10" file_name="aditya_balwani_spin_10.png"/>
+        <image_file id="11" file_name="aditya_balwani_walk_S_1.png"/>
+        <image_file id="12" file_name="aditya_balwani_walk_S_2.png"/>
+        <image_file id="13" file_name="aditya_balwani_walk_S_3.png"/>
+        <image_file id="14" file_name="aditya_balwani_walk_S_4.png"/>
+        <image_file id="15" file_name="aditya_balwani_walk_S_5.png"/>
+        <image_file id="16" file_name="aditya_balwani_walk_S_6.png"/>
+        <image_file id="17" file_name="aditya_balwani_walk_S_7.png"/>
+        <image_file id="18" file_name="aditya_balwani_walk_S_8.png"/>
+        <image_file id="19" file_name="aditya_balwani_walk_S_9.png"/>
+        <image_file id="20" file_name="aditya_balwani_walk_S_10.png"/>
+        <image_file id="21" file_name="aditya_balwani_walk_N_1.png"/>
+        <image_file id="22" file_name="aditya_balwani_walk_N_2.png"/>
+        <image_file id="23" file_name="aditya_balwani_walk_N_3.png"/>
+        <image_file id="24" file_name="aditya_balwani_walk_N_4.png"/>
+        <image_file id="25" file_name="aditya_balwani_walk_N_5.png"/>
+        <image_file id="26" file_name="aditya_balwani_walk_N_6.png"/>
+        <image_file id="27" file_name="aditya_balwani_walk_N_7.png"/>
+        <image_file id="28" file_name="aditya_balwani_walk_N_8.png"/>
+        <image_file id="29" file_name="aditya_balwani_walk_N_9.png"/>
+        <image_file id="30" file_name="aditya_balwani_walk_N_10.png"/>
+        <image_file id="31" file_name="aditya_balwani_walk_W_1.png"/>
+        <image_file id="32" file_name="aditya_balwani_walk_W_2.png"/>
+        <image_file id="33" file_name="aditya_balwani_walk_W_3.png"/>
+        <image_file id="34" file_name="aditya_balwani_walk_W_4.png"/>
+        <image_file id="35" file_name="aditya_balwani_walk_W_5.png"/>
+        <image_file id="36" file_name="aditya_balwani_walk_W_6.png"/>
+        <image_file id="37" file_name="aditya_balwani_walk_W_7.png"/>
+        <image_file id="38" file_name="aditya_balwani_walk_W_8.png"/>
+        <image_file id="39" file_name="aditya_balwani_walk_W_9.png"/>
+        <image_file id="40" file_name="aditya_balwani_walk_W_10.png"/>
+        <image_file id="41" file_name="aditya_balwani_walk_E_1.png"/>
+        <image_file id="42" file_name="aditya_balwani_walk_E_2.png"/>
+        <image_file id="43" file_name="aditya_balwani_walk_E_3.png"/>
+        <image_file id="44" file_name="aditya_balwani_walk_E_4.png"/>
+        <image_file id="45" file_name="aditya_balwani_walk_E_5.png"/>
+        <image_file id="46" file_name="aditya_balwani_walk_E_6.png"/>
+        <image_file id="47" file_name="aditya_balwani_walk_E_7.png"/>
+        <image_file id="48" file_name="aditya_balwani_walk_E_8.png"/>
+        <image_file id="49" file_name="aditya_balwani_walk_E_9.png"/>
+        <image_file id="50" file_name="aditya_balwani_walk_E_10.png"/>
+        <image_file id="51" file_name="aditya_balwani_attack_S_1.png"/>
+        <image_file id="52" file_name="aditya_balwani_attack_S_2.png"/>
+        <image_file id="53" file_name="aditya_balwani_attack_S_3.png"/>
+        <image_file id="54" file_name="aditya_balwani_attack_S_4.png"/>
+        <image_file id="55" file_name="aditya_balwani_attack_S_5.png"/>
+        <image_file id="56" file_name="aditya_balwani_attack_S_6.png"/>
+        <image_file id="57" file_name="aditya_balwani_attack_S_7.png"/>
+        <image_file id="58" file_name="aditya_balwani_attack_S_8.png"/>
+        <image_file id="59" file_name="aditya_balwani_attack_S_9.png"/>
+        <image_file id="60" file_name="aditya_balwani_attack_S_10.png"/>
+        <image_file id="61" file_name="aditya_balwani_attack_N_1.png"/>
+        <image_file id="62" file_name="aditya_balwani_attack_N_2.png"/>
+        <image_file id="63" file_name="aditya_balwani_attack_N_3.png"/>
+        <image_file id="64" file_name="aditya_balwani_attack_N_4.png"/>
+        <image_file id="65" file_name="aditya_balwani_attack_N_5.png"/>
+        <image_file id="66" file_name="aditya_balwani_attack_N_6.png"/>
+        <image_file id="67" file_name="aditya_balwani_attack_N_7.png"/>
+        <image_file id="68" file_name="aditya_balwani_attack_N_8.png"/>
+        <image_file id="69" file_name="aditya_balwani_attack_N_9.png"/>
+        <image_file id="70" file_name="aditya_balwani_attack_N_10.png"/>
+        <image_file id="71" file_name="aditya_balwani_attack_W_1.png"/>
+        <image_file id="72" file_name="aditya_balwani_attack_W_2.png"/>
+        <image_file id="73" file_name="aditya_balwani_attack_W_3.png"/>
+        <image_file id="74" file_name="aditya_balwani_attack_W_4.png"/>
+        <image_file id="75" file_name="aditya_balwani_attack_W_5.png"/>
+        <image_file id="76" file_name="aditya_balwani_attack_W_6.png"/>
+        <image_file id="77" file_name="aditya_balwani_attack_W_7.png"/>
+        <image_file id="78" file_name="aditya_balwani_attack_W_8.png"/>
+        <image_file id="79" file_name="aditya_balwani_attack_W_9.png"/>
+        <image_file id="80" file_name="aditya_balwani_attack_W_10.png"/>
+        <image_file id="81" file_name="aditya_balwani_attack_E_1.png"/>
+        <image_file id="82" file_name="aditya_balwani_attack_E_2.png"/>
+        <image_file id="83" file_name="aditya_balwani_attack_E_3.png"/>
+        <image_file id="84" file_name="aditya_balwani_attack_E_4.png"/>
+        <image_file id="85" file_name="aditya_balwani_attack_E_5.png"/>
+        <image_file id="86" file_name="aditya_balwani_attack_E_6.png"/>
+        <image_file id="87" file_name="aditya_balwani_attack_E_7.png"/>
+        <image_file id="88" file_name="aditya_balwani_attack_E_8.png"/>
+        <image_file id="89" file_name="aditya_balwani_attack_E_9.png"/>
+        <image_file id="90" file_name="aditya_balwani_attack_E_10.png"/>
+        <image_file id="91" file_name="aditya_balwani_walk_SE_1.png"/>
+        <image_file id="92" file_name="aditya_balwani_walk_SE_2.png"/>
+        <image_file id="93" file_name="aditya_balwani_walk_SE_3.png"/>
+        <image_file id="94" file_name="aditya_balwani_walk_SE_4.png"/>
+        <image_file id="95" file_name="aditya_balwani_walk_SE_5.png"/>
+        <image_file id="96" file_name="aditya_balwani_walk_SE_6.png"/>
+        <image_file id="97" file_name="aditya_balwani_walk_SE_7.png"/>
+        <image_file id="98" file_name="aditya_balwani_walk_SE_8.png"/>
+        <image_file id="99" file_name="aditya_balwani_walk_SE_9.png"/>
+        <image_file id="100" file_name="aditya_balwani_walk_SE_10.png"/>
+        <image_file id="101" file_name="aditya_balwani_walk_NE_1.png"/>
+        <image_file id="102" file_name="aditya_balwani_walk_NE_2.png"/>
+        <image_file id="103" file_name="aditya_balwani_walk_NE_3.png"/>
+        <image_file id="104" file_name="aditya_balwani_walk_NE_4.png"/>
+        <image_file id="105" file_name="aditya_balwani_walk_NE_5.png"/>
+        <image_file id="106" file_name="aditya_balwani_walk_NE_6.png"/>
+        <image_file id="107" file_name="aditya_balwani_walk_NE_7.png"/>
+        <image_file id="108" file_name="aditya_balwani_walk_NE_8.png"/>
+        <image_file id="109" file_name="aditya_balwani_walk_NE_9.png"/>
+        <image_file id="110" file_name="aditya_balwani_walk_NE_10.png"/>
+        <image_file id="111" file_name="aditya_balwani_walk_SW_1.png"/>
+        <image_file id="112" file_name="aditya_balwani_walk_SW_2.png"/>
+        <image_file id="113" file_name="aditya_balwani_walk_SW_3.png"/>
+        <image_file id="114" file_name="aditya_balwani_walk_SW_4.png"/>
+        <image_file id="115" file_name="aditya_balwani_walk_SW_5.png"/>
+        <image_file id="116" file_name="aditya_balwani_walk_SW_6.png"/>
+        <image_file id="117" file_name="aditya_balwani_walk_SW_7.png"/>
+        <image_file id="118" file_name="aditya_balwani_walk_SW_8.png"/>
+        <image_file id="119" file_name="aditya_balwani_walk_SW_9.png"/>
+        <image_file id="120" file_name="aditya_balwani_walk_SW_10.png"/>
+        <image_file id="121" file_name="aditya_balwani_walk_NW_1.png"/>
+        <image_file id="122" file_name="aditya_balwani_walk_NW_2.png"/>
+        <image_file id="123" file_name="aditya_balwani_walk_NW_3.png"/>
+        <image_file id="124" file_name="aditya_balwani_walk_NW_4.png"/>
+        <image_file id="125" file_name="aditya_balwani_walk_NW_5.png"/>
+        <image_file id="126" file_name="aditya_balwani_walk_NW_6.png"/>
+        <image_file id="127" file_name="aditya_balwani_walk_NW_7.png"/>
+        <image_file id="128" file_name="aditya_balwani_walk_NW_8.png"/>
+        <image_file id="129" file_name="aditya_balwani_walk_NW_9.png"/>
+        <image_file id="130" file_name="aditya_balwani_walk_NW_10.png"/>
+        <image_file id="131" file_name="aditya_balwani_attack_SW_1.png"/>
+        <image_file id="132" file_name="aditya_balwani_attack_SW_2.png"/>
+        <image_file id="133" file_name="aditya_balwani_attack_SW_3.png"/>
+        <image_file id="134" file_name="aditya_balwani_attack_SW_4.png"/>
+        <image_file id="135" file_name="aditya_balwani_attack_SW_5.png"/>
+        <image_file id="136" file_name="aditya_balwani_attack_SW_6.png"/>
+        <image_file id="137" file_name="aditya_balwani_attack_SW_7.png"/>
+        <image_file id="138" file_name="aditya_balwani_attack_SW_8.png"/>
+        <image_file id="139" file_name="aditya_balwani_attack_SW_9.png"/>
+        <image_file id="140" file_name="aditya_balwani_attack_SW_10.png"/>
+        <image_file id="141" file_name="aditya_balwani_attack_NW_1.png"/>
+        <image_file id="142" file_name="aditya_balwani_attack_NW_2.png"/>
+        <image_file id="143" file_name="aditya_balwani_attack_NW_3.png"/>
+        <image_file id="144" file_name="aditya_balwani_attack_NW_4.png"/>
+        <image_file id="145" file_name="aditya_balwani_attack_NW_5.png"/>
+        <image_file id="146" file_name="aditya_balwani_attack_NW_6.png"/>
+        <image_file id="147" file_name="aditya_balwani_attack_NW_7.png"/>
+        <image_file id="148" file_name="aditya_balwani_attack_NW_8.png"/>
+        <image_file id="149" file_name="aditya_balwani_attack_NW_9.png"/>
+        <image_file id="150" file_name="aditya_balwani_attack_NW_10.png"/>
+        <image_file id="151" file_name="aditya_balwani_attack_SE_1.png"/>
+        <image_file id="152" file_name="aditya_balwani_attack_SE_2.png"/>
+        <image_file id="153" file_name="aditya_balwani_attack_SE_3.png"/>
+        <image_file id="154" file_name="aditya_balwani_attack_SE_4.png"/>
+        <image_file id="155" file_name="aditya_balwani_attack_SE_5.png"/>
+        <image_file id="156" file_name="aditya_balwani_attack_SE_6.png"/>
+        <image_file id="157" file_name="aditya_balwani_attack_SE_7.png"/>
+        <image_file id="158" file_name="aditya_balwani_attack_SE_8.png"/>
+        <image_file id="159" file_name="aditya_balwani_attack_SE_9.png"/>
+        <image_file id="160" file_name="aditya_balwani_attack_SE_10.png"/>
+        <image_file id="161" file_name="aditya_balwani_attack_NE_1.png"/>
+        <image_file id="162" file_name="aditya_balwani_attack_NE_2.png"/>
+        <image_file id="163" file_name="aditya_balwani_attack_NE_3.png"/>
+        <image_file id="164" file_name="aditya_balwani_attack_NE_4.png"/>
+        <image_file id="165" file_name="aditya_balwani_attack_NE_5.png"/>
+        <image_file id="166" file_name="aditya_balwani_attack_NE_6.png"/>
+        <image_file id="167" file_name="aditya_balwani_attack_NE_7.png"/>
+        <image_file id="168" file_name="aditya_balwani_attack_NE_8.png"/>
+        <image_file id="169" file_name="aditya_balwani_attack_NE_9.png"/>
+        <image_file id="170" file_name="aditya_balwani_attack_NE_10.png"/>
+        <image_file id="171" file_name="aditya_balwani_dead_1.png"/>
+        <image_file id="172" file_name="aditya_balwani_dead_2.png"/>
+        <image_file id="173" file_name="aditya_balwani_dead_3.png"/>
+        <image_file id="174" file_name="aditya_balwani_dead_4.png"/>
+        <image_file id="175" file_name="aditya_balwani_dead_5.png"/>
+        <image_file id="176" file_name="aditya_balwani_dead_6.png"/>
+        <image_file id="177" file_name="aditya_balwani_dead_7.png"/>
+        <image_file id="178" file_name="aditya_balwani_dead_8.png"/>
+        <image_file id="179" file_name="aditya_balwani_dead_9.png"/>
+        <image_file id="180" file_name="aditya_balwani_dead_10.png"/>
+        <image_file id="181" file_name="aditya_balwani_idle_1.png"/>
+        <image_file id="182" file_name="aditya_balwani_idle_2.png"/>
+        <image_file id="183" file_name="aditya_balwani_idle_3.png"/>
+        <image_file id="184" file_name="aditya_balwani_idle_4.png"/>
+        <image_file id="185" file_name="aditya_balwani_idle_5.png"/>
+        <image_file id="186" file_name="aditya_balwani_idle_6.png"/>
+    </images_list>
+    <animations_list>
+        <animation_state>
+            <state>IDLE</state>
+            <animation_sequence>
+                <pose image_id="181" duration="3"/>
+                <pose image_id="182" duration="3"/>
+                <pose image_id="183" duration="3"/>
+                <pose image_id="184" duration="3"/>
+                <pose image_id="185" duration="3"/>
+                <pose image_id="186" duration="3"/>
+                <pose image_id="185" duration="3"/>
+                <pose image_id="184" duration="3"/>
+                <pose image_id="183" duration="3"/>
+                <pose image_id="182" duration="3"/>
+                <pose image_id="181" duration="3"/>
+                <pose image_id="181" duration="3"/>
+            </animation_sequence>
+        </animation_state>
+        <animation_state>
+            <state>SPIN</state>
+            <animation_sequence>
+                <pose image_id="1" duration="3"/>
+                <pose image_id="2" duration="3"/>
+                <pose image_id="3" duration="3"/>
+                <pose image_id="4" duration="3"/>
+                <pose image_id="5" duration="3"/>
+                <pose image_id="6" duration="3"/>
+                <pose image_id="7" duration="3"/>
+                <pose image_id="8" duration="3"/>
+                <pose image_id="9" duration="3"/>
+                <pose image_id="10" duration="3"/>
+            </animation_sequence>
+        </animation_state>
+        <animation_state>
+            <state>WALK_SOUTH</state>
+            <animation_sequence>
+                <pose image_id="11" duration="3"/>
+                <pose image_id="12" duration="3"/>
+                <pose image_id="13" duration="3"/>
+                <pose image_id="14" duration="3"/>
+                <pose image_id="15" duration="3"/>
+                <pose image_id="16" duration="3"/>
+                <pose image_id="17" duration="3"/>
+                <pose image_id="18" duration="3"/>
+                <pose image_id="19" duration="3"/>
+                <pose image_id="20" duration="3"/>
+            </animation_sequence>
+        </animation_state>
+        <animation_state>
+            <state>WALK_SOUTH_EAST</state>
+            <animation_sequence>
+                <pose image_id="91" duration="3"/>
+                <pose image_id="92" duration="3"/>
+                <pose image_id="93" duration="3"/>
+                <pose image_id="94" duration="3"/>
+                <pose image_id="95" duration="3"/>
+                <pose image_id="96" duration="3"/>
+                <pose image_id="97" duration="3"/>
+                <pose image_id="98" duration="3"/>
+                <pose image_id="99" duration="3"/>
+                <pose image_id="100" duration="3"/>
+            </animation_sequence>
+        </animation_state>
+        <animation_state>
+            <state>WALK_EAST</state>
+            <animation_sequence>
+                <pose image_id="41" duration="3"/>
+                <pose image_id="42" duration="3"/>
+                <pose image_id="43" duration="3"/>
+                <pose image_id="44" duration="3"/>
+                <pose image_id="45" duration="3"/>
+                <pose image_id="46" duration="3"/>
+                <pose image_id="47" duration="3"/>
+                <pose image_id="48" duration="3"/>
+                <pose image_id="49" duration="3"/>
+                <pose image_id="50" duration="3"/>
+            </animation_sequence>
+        </animation_state>
+        <animation_state>
+            <state>WALK_NORTH_EAST</state>
+            <animation_sequence>
+                <pose image_id="101" duration="3"/>
+                <pose image_id="102" duration="3"/>
+                <pose image_id="103" duration="3"/>
+                <pose image_id="104" duration="3"/>
+                <pose image_id="105" duration="3"/>
+                <pose image_id="106" duration="3"/>
+                <pose image_id="107" duration="3"/>
+                <pose image_id="108" duration="3"/>
+                <pose image_id="109" duration="3"/>
+                <pose image_id="110" duration="3"/>
+            </animation_sequence>
+        </animation_state>
+        <animation_state>
+            <state>WALK_NORTH</state>
+            <animation_sequence>
+                <pose image_id="21" duration="3"/>
+                <pose image_id="22" duration="3"/>
+                <pose image_id="23" duration="3"/>
+                <pose image_id="24" duration="3"/>
+                <pose image_id="25" duration="3"/>
+                <pose image_id="26" duration="3"/>
+                <pose image_id="27" duration="3"/>
+                <pose image_id="28" duration="3"/>
+                <pose image_id="29" duration="3"/>
+                <pose image_id="30" duration="3"/>
+            </animation_sequence>
+        </animation_state>
+        <animation_state>
+            <state>WALK_NORTH_WEST</state>
+            <animation_sequence>
+                <pose image_id="121" duration="3"/>
+                <pose image_id="122" duration="3"/>
+                <pose image_id="123" duration="3"/>
+                <pose image_id="124" duration="3"/>
+                <pose image_id="125" duration="3"/>
+                <pose image_id="126" duration="3"/>
+                <pose image_id="127" duration="3"/>
+                <pose image_id="128" duration="3"/>
+                <pose image_id="129" duration="3"/>
+                <pose image_id="130" duration="3"/>
+            </animation_sequence>
+        </animation_state>
+        <animation_state>
+            <state>WALK_WEST</state>
+            <animation_sequence>
+                <pose image_id="31" duration="3"/>
+                <pose image_id="32" duration="3"/>
+                <pose image_id="33" duration="3"/>
+                <pose image_id="34" duration="3"/>
+                <pose image_id="35" duration="3"/>
+                <pose image_id="36" duration="3"/>
+                <pose image_id="37" duration="3"/>
+                <pose image_id="38" duration="3"/>
+                <pose image_id="39" duration="3"/>
+                <pose image_id="40" duration="3"/>
+            </animation_sequence>
+        </animation_state>
+        <animation_state>
+            <state>WALK_SOUTH_WEST</state>
+            <animation_sequence>
+                <pose image_id="111" duration="3"/>
+                <pose image_id="112" duration="3"/>
+                <pose image_id="113" duration="3"/>
+                <pose image_id="114" duration="3"/>
+                <pose image_id="115" duration="3"/>
+                <pose image_id="116" duration="3"/>
+                <pose image_id="117" duration="3"/>
+                <pose image_id="118" duration="3"/>
+                <pose image_id="119" duration="3"/>
+                <pose image_id="120" duration="3"/>
+            </animation_sequence>
+        </animation_state>
+        <animation_state>
+            <state>ATTACK_SOUTH</state>
+            <animation_sequence>
+                <pose image_id="51" duration="5"/>
+                <pose image_id="52" duration="2"/>
+                <pose image_id="53" duration="2"/>
+                <pose image_id="54" duration="2"/>
+                <pose image_id="55" duration="2"/>
+                <pose image_id="56" duration="2"/>
+                <pose image_id="57" duration="2"/>
+                <pose image_id="58" duration="2"/>
+                <pose image_id="59" duration="2"/>
+                <pose image_id="60" duration="5"/>
+            </animation_sequence>
+        </animation_state>
+        <animation_state>
+            <state>ATTACK_SOUTH_EAST</state>
+            <animation_sequence>
+                <pose image_id="151" duration="5"/>
+                <pose image_id="152" duration="2"/>
+                <pose image_id="153" duration="2"/>
+                <pose image_id="154" duration="2"/>
+                <pose image_id="155" duration="2"/>
+                <pose image_id="156" duration="2"/>
+                <pose image_id="157" duration="2"/>
+                <pose image_id="158" duration="2"/>
+                <pose image_id="159" duration="2"/>
+                <pose image_id="160" duration="5"/>
+            </animation_sequence>
+        </animation_state>
+        <animation_state>
+            <state>ATTACK_EAST</state>
+            <animation_sequence>
+                <pose image_id="81" duration="5"/>
+                <pose image_id="82" duration="2"/>
+                <pose image_id="83" duration="2"/>
+                <pose image_id="84" duration="2"/>
+                <pose image_id="85" duration="2"/>
+                <pose image_id="86" duration="2"/>
+                <pose image_id="87" duration="2"/>
+                <pose image_id="88" duration="2"/>
+                <pose image_id="89" duration="2"/>
+                <pose image_id="90" duration="5"/>
+            </animation_sequence>
+        </animation_state>
+        <animation_state>
+            <state>ATTACK_NORTH_EAST</state>
+            <animation_sequence>
+                <pose image_id="161" duration="5"/>
+                <pose image_id="162" duration="2"/>
+                <pose image_id="163" duration="2"/>
+                <pose image_id="164" duration="2"/>
+                <pose image_id="165" duration="2"/>
+                <pose image_id="166" duration="2"/>
+                <pose image_id="167" duration="2"/>
+                <pose image_id="168" duration="2"/>
+                <pose image_id="169" duration="2"/>
+                <pose image_id="170" duration="5"/>
+            </animation_sequence>
+        </animation_state>
+        <animation_state>
+            <state>ATTACK_NORTH</state>
+            <animation_sequence>
+                <pose image_id="61" duration="5"/>
+                <pose image_id="62" duration="2"/>
+                <pose image_id="63" duration="2"/>
+                <pose image_id="64" duration="2"/>
+                <pose image_id="65" duration="2"/>
+                <pose image_id="66" duration="2"/>
+                <pose image_id="67" duration="2"/>
+                <pose image_id="68" duration="2"/>
+                <pose image_id="69" duration="2"/>
+                <pose image_id="70" duration="5"/>
+            </animation_sequence>
+        </animation_state>
+        <animation_state>
+            <state>ATTACK_NORTH_WEST</state>
+            <animation_sequence>
+                <pose image_id="141" duration="5"/>
+                <pose image_id="142" duration="2"/>
+                <pose image_id="143" duration="2"/>
+                <pose image_id="144" duration="2"/>
+                <pose image_id="145" duration="2"/>
+                <pose image_id="146" duration="2"/>
+                <pose image_id="147" duration="2"/>
+                <pose image_id="148" duration="2"/>
+                <pose image_id="149" duration="2"/>
+                <pose image_id="150" duration="5"/>
+            </animation_sequence>
+        </animation_state>
+        <animation_state>
+            <state>ATTACK_WEST</state>
+            <animation_sequence>
+                <pose image_id="71" duration="5"/>
+                <pose image_id="72" duration="2"/>
+                <pose image_id="73" duration="2"/>
+                <pose image_id="74" duration="2"/>
+                <pose image_id="75" duration="2"/>
+                <pose image_id="76" duration="2"/>
+                <pose image_id="77" duration="2"/>
+                <pose image_id="78" duration="2"/>
+                <pose image_id="79" duration="2"/>
+                <pose image_id="80" duration="5"/>
+            </animation_sequence>
+        </animation_state>
+        <animation_state>
+            <state>ATTACK_SOUTH_WEST</state>
+            <animation_sequence>
+                <pose image_id="131" duration="5"/>
+                <pose image_id="132" duration="2"/>
+                <pose image_id="133" duration="2"/>
+                <pose image_id="134" duration="2"/>
+                <pose image_id="135" duration="2"/>
+                <pose image_id="136" duration="2"/>
+                <pose image_id="137" duration="2"/>
+                <pose image_id="138" duration="2"/>
+                <pose image_id="139" duration="2"/>
+                <pose image_id="140" duration="5"/>
+            </animation_sequence>
+        </animation_state>
+        <animation_state>
+            <state>DEAD</state>
+            <animation_sequence>
+                <pose image_id="171" duration="5"/>
+                <pose image_id="172" duration="1"/>
+                <pose image_id="173" duration="1"/>
+                <pose image_id="174" duration="1"/>
+                <pose image_id="175" duration="2"/>
+                <pose image_id="176" duration="2"/>
+                <pose image_id="177" duration="1"/>
+                <pose image_id="178" duration="1"/>
+                <pose image_id="179" duration="2"/>
+                <pose image_id="180" duration="5"/>
+            </animation_sequence>
+        </animation_state>
+    </animations_list>
+</sprite_type>

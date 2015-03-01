@@ -387,7 +387,7 @@ void OrthographicGridPathfinder::updatePath(AnimatedSprite *sprite)
 		float vX = unitX * MAX_WALK_SPEED;
 		float vY = unitY * MAX_WALK_SPEED;
 		sprite->getPhysicalProperties()->setVelocity(vX, vY);
-		sprite->setCurrentState(L"WALKING");
+		sprite->setCurrentState(L"WALK_EAST");
 	}
 	else
 	{
