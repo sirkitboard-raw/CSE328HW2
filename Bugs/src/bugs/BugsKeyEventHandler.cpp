@@ -24,6 +24,8 @@
 #include "sssf\input\GameInput.h"
 #include "sssf\timer\GameTimer.h"
 #include "sssf\platforms\Windows\WindowsTimer.h"
+#include "sssf\gsm\ai\bots\Monster.h"
+#include "sssf\gsm\ai\bots\RandomFloatingBot.h"
 
 /*
 	handleKeyEvent - this method handles all keyboard interactions. Note that every frame this method
@@ -41,7 +43,7 @@ void BugsKeyEventHandler::handleKeyEvents(Game *game)
 	AnimatedSprite *player = gsm->getSpriteManager()->getPlayer();
 	PhysicalProperties *pp = player->getPhysicalProperties();
 	Viewport *viewport = game->getGUI()->getViewport();
-	
+	SpriteManager* spriteManager = gsm->getSpriteManager();
 	// IF THE GAME IS IN PROGRESS
 	if (gsm->isGameInProgress())
 	{
@@ -66,6 +68,53 @@ void BugsKeyEventHandler::handleKeyEvents(Game *game)
 		{
 			game->getGraphics()->togglePathfindingPathShouldBeRendered();
 		}
+		if (input->isKeyDownForFirstTime(PLUS_KEY) || input->isKeyDownForFirstTime(ADD_KEY)) {
+			for (int i = 0; i < 10; i++) {
+				AnimatedSpriteType *monsterSpriteType = spriteManager->getSpriteType(1);
+				Monster* monster = new Monster();
+				monster->setSpriteType(monsterSpriteType);
+				monster->setAlpha(255);
+				monster->setCurrentState(IDLE);
+				PhysicalProperties *playerProps = monster->getPhysicalProperties();
+				playerProps->setX(dis(gen2));
+				playerProps->setY(dis(gen2));
+				float vx = disf(gen2);
+				float vy = disf(gen2);
+				playerProps->setVelocity(vx, vy);
+				monster->affixTightAABBBoundingVolume();
+				spriteManager->addBot(monster);
+			}
+		}
+		if (input->isKeyDownForFirstTime(MINUS_KEY) || input->isKeyDownForFirstTime(SUB_KEY)) {
+			srand(time(NULL));
+			int numBots = spriteManager->getNumberOfSprites();
+			if (numBots <= 10) {
+				list<Bot*>::iterator botIterator = spriteManager->getBotsIterator();
+				list<Bot*>::iterator botEnd = spriteManager->getEndOfBotsIterator();
+				while (botIterator != botEnd) {
+					spriteManager->removeBot();
+				}
+			}
+			else {
+				int ctr = 0;
+				while (ctr<10) {
+					spriteManager->removeBot();
+					ctr++;
+				}
+			}
+		}
+		if (input->isKeyDownForFirstTime(R_KEY)) {
+			list<Bot*>::iterator botIterator = spriteManager->getBotsIterator();
+			list<Bot*>::iterator botEnd = spriteManager->getEndOfBotsIterator();
+			while (botIterator != botEnd) {
+				Bot* bot = (*botIterator);
+				PhysicalProperties *playerProps = bot->getPhysicalProperties();
+				playerProps->setX(dis(gen2));
+				playerProps->setY(dis(gen2));
+				botIterator++;
+			}
+		}
+
 
 		bool viewportMoved = false;
 		float viewportVx = 0.0f;
@@ -96,15 +145,19 @@ void BugsKeyEventHandler::handleKeyEvents(Game *game)
 		
 		if (input->isKeyDown(SPACE_KEY))
 		{
-			game->repositionViewport();
+			game->repositionViewport(10.f);
 		}
+		else {
+			game->repositionViewport(3.0f);
+		}
+		
 		
 	}
 
-	if (input->isKeyDown(SPACE_KEY))
-	{
-		game->repositionViewport();
-	}
+	//if (input->isKeyDown(SPACE_KEY))
+	//{
+		
+//	}
 
 	// 0X43 is HEX FOR THE 'C' VIRTUAL KEY
 	// THIS CHANGES THE CURSOR IMAGE

@@ -1,5 +1,6 @@
 #pragma once
 #include "bugs_VS\stdafx.h"
+#include <random>
 
 /*
 	BugsGame.h
@@ -7,6 +8,7 @@
 	This file contains setup data for making the Bugs game. Note that nearly
 	all of this data would better serve us if loaded from files.
 */
+
 
 // HERE IS THE Bugs GAME SETUP/INIT FILE. EVERYTHING WOULD START FROM HERE
 static const wstring	W_LEVEL_1_DIR			= L"data/levels/TopDownDesert/";
@@ -80,11 +82,21 @@ const unsigned int P_KEY = (unsigned int)'P';
 const unsigned int T_KEY = (unsigned int)'T';
 const unsigned int L_KEY = (unsigned int)'L';
 const unsigned int F_KEY = (unsigned int)'F';
+const unsigned int R_KEY = (unsigned int)'R';
 const unsigned int UP_KEY = VK_UP;
 const unsigned int DOWN_KEY = VK_DOWN;
 const unsigned int LEFT_KEY = VK_LEFT;
 const unsigned int RIGHT_KEY = VK_RIGHT;
 const unsigned int SPACE_KEY = VK_SPACE;
+const unsigned int PLUS_KEY = VK_OEM_PLUS;
+const unsigned int ADD_KEY = VK_ADD;
+const unsigned int SUB_KEY = VK_SUBTRACT;
+const unsigned int MINUS_KEY = VK_OEM_MINUS;
+
+static std::random_device rd2;
+static std::mt19937 gen2(rd2());
+static std::uniform_int_distribution<> dis(0, 3200);
+static std::uniform_real_distribution<> disf(-1, 1);
 
 // THIS IS JUST FOR SHOWING HOW THE CURSOR CAN BE CHANGED
 const unsigned int C_KEY = (unsigned int)'C';

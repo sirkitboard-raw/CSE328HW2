@@ -419,6 +419,7 @@ void OrthographicGridPathfinder::updatePath(AnimatedSprite *sprite)
 			else {
 				sprite->setCurrentState(L"WALK_SOUTH_WEST");
 			}
+			//game->repositionViewport();
 		}
 	}
 	else

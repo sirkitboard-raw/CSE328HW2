@@ -64,4 +64,6 @@ public:
 	void				setPathfinder(GridPathfinder *initPathfinder) { pathfinder = initPathfinder; }
 	void				unloadSprites();
 	void				update(Game *game);
+	void				removeBot(); 
+	void				removeBotFromList(Bot* bot);
 };

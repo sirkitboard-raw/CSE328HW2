@@ -24,7 +24,7 @@
 #include "sssf\timer\GameTimer.h"
 
 
-static const float		MAX_VIEWPORT_AXIS_VELOCITY = 20.0f;
+static const float		MAX_VIEWPORT_AXIS_VELOCITY = 3.0f;
 /*
 	Game  - Constructor, this method begins the 
 	construction and loading of all major game objects. 
@@ -142,7 +142,7 @@ void Game::runGameLoop()
 	}
 }
 
-void Game::repositionViewport() {
+void Game::repositionViewport(float speed) {
 	Viewport *viewport = getGUI()->getViewport();
 	World *world = getGSM()->getWorld();
 	int viewportX = viewport->getViewportX();
@@ -158,31 +158,31 @@ void Game::repositionViewport() {
 	float viewportVx = 0.0f;
 	float viewportVy = 0.0f;
 
-	if (viewportX + (viewportWidth / 2) < playerX) {
-		if ((viewportX + viewportWidth) >= world->getWorldWidth());
-		else {
-			viewportVx += MAX_VIEWPORT_AXIS_VELOCITY;
-			viewportMoved = true;
-		}
-	}
-	else if (viewportX + (viewportWidth / 2) > playerX){
+	if (viewportX + (viewportWidth / 3) > playerX) {
 		if (viewportX <= 0);
 		else {
-			viewportVx -= MAX_VIEWPORT_AXIS_VELOCITY;
+			viewportVx -= speed;
 			viewportMoved = true;
 		}
 	}
-	if (viewportY + (viewportHeight / 2) < playerY) {
-		if ((viewportY + viewportHeight) >= world->getWorldHeight());
+	else if (viewportX + 2 *(viewportWidth / 3) < playerX){
+		if ((viewportX + viewportWidth) >= world->getWorldWidth());
 		else {
-			viewportVy += MAX_VIEWPORT_AXIS_VELOCITY;
+			viewportVx += speed;
 			viewportMoved = true;
 		}
 	}
-	else if (viewportY + (viewportHeight / 2) > playerY){
+	if (viewportY + (viewportHeight / 3) > playerY) {
 		if (viewportY <= 0);
 		else {
-			viewportVy -= MAX_VIEWPORT_AXIS_VELOCITY;
+			viewportVy -= speed;
+			viewportMoved = true;
+		}
+	}
+	else if (viewportY + 2 *(viewportHeight / 3) < playerY){
+		if ((viewportY + viewportHeight) >= world->getWorldHeight());
+		else {
+			viewportVy += speed;
 			viewportMoved = true;
 		}
 	}
@@ -194,44 +194,44 @@ void Game::repositionViewport() {
 //	if (viewportX == 0);
 //	else if ((viewportX + viewportWidth) >= world->getWorldWidth());
 //	else if (viewportX + (viewportWidth / 2) < playerX) {
-//		viewportVx -= MAX_VIEWPORT_AXIS_VELOCITY;
+//		viewportVx -= speed;
 //		viewportMoved = true;
 //	}
 //	else {
-//		viewportVx += MAX_VIEWPORT_AXIS_VELOCITY;
+//		viewportVx += speed;
 //			viewportMoved = true;
 //	}
 //
 //	if (viewportY == 0);
 //	else if ((viewportY+ viewportHeight) >= world->getWorldHeight());
 //	else if (viewportY + (viewportHeight / 2) < playerY) {
-//		viewportVy -= MAX_VIEWPORT_AXIS_VELOCITY;
+//		viewportVy -= speed;
 //		viewportMoved = true;
 //	}
 //	else {
-//		viewportVy += MAX_VIEWPORT_AXIS_VELOCITY;
+//		viewportVy += speed;
 //		viewportMoved = true;
 //	}
 	
 
 //	if (input->isKeyDown(UP_KEY))
 //	{
-//		viewportVy -= MAX_VIEWPORT_AXIS_VELOCITY;
+//		viewportVy -= speed;
 //		viewportMoved = true;
 //	}
 //	if (input->isKeyDown(DOWN_KEY))
 //	{
-//		viewportVy += MAX_VIEWPORT_AXIS_VELOCITY;
+//		viewportVy += speed;
 //		viewportMoved = true;
 //	}
 //	if (input->isKeyDown(LEFT_KEY))
 //	{
-//		viewportVx -= MAX_VIEWPORT_AXIS_VELOCITY;
+//		viewportVx -= speed;
 //		viewportMoved = true;
 //	}
 //	if (input->isKeyDown(RIGHT_KEY))
 //	{
-//		viewportVx += MAX_VIEWPORT_AXIS_VELOCITY;
+//		viewportVx += speed;
 //		viewportMoved = true;
 //	}
 //	if (viewportMoved)

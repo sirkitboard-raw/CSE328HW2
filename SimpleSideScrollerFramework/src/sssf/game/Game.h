@@ -106,5 +106,5 @@ public:
 	void	runGameLoop();
 	void	shutdown();
 	void	startGame();
-	void	repositionViewport();
+	void	repositionViewport(float speed);
 };

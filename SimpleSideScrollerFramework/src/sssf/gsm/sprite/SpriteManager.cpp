@@ -92,6 +92,9 @@ void SpriteManager::addBot(Bot *botToAdd)
 {
 	bots.push_back(botToAdd);
 }
+void SpriteManager::removeBot() {
+	bots.pop_back();
+}
 
 /*
 	addSpriteType - This method is for adding a new sprite
@@ -164,7 +167,12 @@ void SpriteManager::unloadSprites()
 
 Bot* SpriteManager::removeBot(Bot *botToRemove)
 {
-	return NULL;
+	// @TODO - WE'LL DO THIS LATER WHEN WE LEARN MORE ABOUT MEMORY MANAGEMENT
+	return botToRemove;
+}
+
+void SpriteManager::removeBotFromList(Bot* bot) {
+		bots.remove(bot);
 	// @TODO - WE'LL DO THIS LATER WHEN WE LEARN MORE ABOUT MEMORY MANAGEMENT
 }
 
@@ -178,13 +186,6 @@ void SpriteManager::update(Game *game)
 	// FIRST LET'S DO THE NECESSARY PATHFINDING
 	pathfinder->updatePath(&player);
 	list<Bot*>::iterator botIterator;
-	botIterator = bots.begin();
-	while (botIterator != bots.end())
-	{
-		Bot *bot = (*botIterator);
-		pathfinder->updatePath(bot);
-		botIterator++;
-	}
 
 	// THEN UPDATE THE PLAYER SPRITE ANIMATION FRAME/STATE/ROTATION
 	player.updateSprite();
