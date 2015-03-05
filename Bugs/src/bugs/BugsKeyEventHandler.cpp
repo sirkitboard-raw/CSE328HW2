@@ -90,9 +90,20 @@ void BugsKeyEventHandler::handleKeyEvents(Game *game)
 			viewportVx += MAX_VIEWPORT_AXIS_VELOCITY;
 			viewportMoved = true;
 		}
-		if (viewportMoved)
-			viewport->moveViewport((int)floor(viewportVx+0.5f), (int)floor(viewportVy+0.5f), game->getGSM()->getWorld()->getWorldWidth(), game->getGSM()->getWorld()->getWorldHeight());
+		if (viewportMoved){
+			viewport->moveViewport((int)floor(viewportVx + 0.5f), (int)floor(viewportVy + 0.5f), game->getGSM()->getWorld()->getWorldWidth(), game->getGSM()->getWorld()->getWorldHeight());
+		}
 		
+		if (input->isKeyDown(SPACE_KEY))
+		{
+			game->repositionViewport();
+		}
+		
+	}
+
+	if (input->isKeyDown(SPACE_KEY))
+	{
+		game->repositionViewport();
 	}
 
 	// 0X43 is HEX FOR THE 'C' VIRTUAL KEY

@@ -641,7 +641,6 @@ void DirectXGraphics::renderGame(Game *game)
 		// THIS HELPS US WITH SOME DEBUGGING
 		renderPathfindingCells();
 		renderGridMarkers();
-
 		endDirectXFrameRendering();
 
 	}

@@ -49,7 +49,7 @@ void SpriteManager::addSpriteToRenderList(AnimatedSprite *sprite,
 									sprite->getAlpha(),
 									spriteType->getTextureWidth(),
 									spriteType->getTextureHeight(),
-									rotation);
+									0);
 	}
 }
 

@@ -23,6 +23,8 @@
 #include "sssf\text\TextGenerator.h"
 #include "sssf\timer\GameTimer.h"
 
+
+static const float		MAX_VIEWPORT_AXIS_VELOCITY = 20.0f;
 /*
 	Game  - Constructor, this method begins the 
 	construction and loading of all major game objects. 
@@ -57,21 +59,21 @@ Game::~Game()
 	// THESE WERE CREATED BY Game, AND SO SHOULD BE
 	// DELETED BY GAME
 	delete gsm;
-	delete gui;
-	delete text;
+delete gui;
+delete text;
 
-	// THE GAME AND PLATFORM STUFF SHOULD BE DELETED
-	// BY WHOEVER CREATED THEM
+// THE GAME AND PLATFORM STUFF SHOULD BE DELETED
+// BY WHOEVER CREATED THEM
 }
 
 /*
 	initplatforms - This method is to be used to feed this Game
-	the constructed, technology-specific, objects. 
-*/
-void Game::initplatforms(		GameGraphics *initGraphics,
-									GameInput *initInput,
-									GameOS *initOS,									
-									GameTimer *initTimer)
+	the constructed, technology-specific, objects.
+	*/
+void Game::initplatforms(GameGraphics *initGraphics,
+	GameInput *initInput,
+	GameOS *initOS,
+	GameTimer *initTimer)
 {
 	// INITIALIZE ALL OF THE GAME'S CUSTOM OBJECTS
 	graphics = initGraphics;
@@ -88,27 +90,27 @@ void Game::initplatforms(		GameGraphics *initGraphics,
 	be called when a full-screen application retains ownership
 	of all necessary resources such that all necessary
 	data (like textures, sound, music, etc.) can be reloaded.
-*/
+	*/
 void Game::reloadAllDevices()
 {
 	graphics->reloadGraphics();
 
 	// WE MIGHT ADD MORE LATER
 }
-	
+
 /*
 	runGameLoop - This is the game loop management method.
 	It runs continuously while the game is active. Once per
 	frame it instructs the major game objects to get
-	user input, record user input, update the GUI state, 
+	user input, record user input, update the GUI state,
 	update the sprites' states using AI and input, perform
 	collision detection and resolution (physics), render
 	the screen, etc.
 
-	This loop is timed such that everything is kept to a 
-	consistent framerate, thus the game should run 
+	This loop is timed such that everything is kept to a
+	consistent framerate, thus the game should run
 	consistently on all machines.
-*/
+	*/
 void Game::runGameLoop()
 {
 	// FIRST PROFILE?
@@ -116,9 +118,8 @@ void Game::runGameLoop()
 
 	// LET'S START THE TIMER FROM SCRATCH
 	timer->resetTimer();
-
 	// KEEP RENDERING UNTIL SOMEONE PULLS THE PLUG
-	while(gsm->isAppActive())
+	while (gsm->isAppActive())
 	{
 		// MOVE ALONG WINDOWS MESSAGES, THIS ALLOWS
 		// US TO GET USER INPUT
@@ -134,12 +135,110 @@ void Game::runGameLoop()
 		{
 			// USE THE INPUT TO UPDATE THE GAME
 			processGameData();
-
 			// AND RENDER THE GAME
+
 			graphics->renderGame(this);
 		}
 	}
 }
+
+void Game::repositionViewport() {
+	Viewport *viewport = getGUI()->getViewport();
+	World *world = getGSM()->getWorld();
+	int viewportX = viewport->getViewportX();
+	int viewportY = viewport->getViewportY();
+	SpriteManager *spriteManager = getGSM()->getSpriteManager();
+	TopDownSprite *player = spriteManager->getPlayer();
+	int playerX = player->getBoundingVolume()->getCenterX();
+	int playerY = player->getBoundingVolume()->getCenterY();
+	int viewportWidth = viewport->getViewportWidth();
+	int viewportHeight = viewport->getViewportHeight();
+
+	bool viewportMoved = false;
+	float viewportVx = 0.0f;
+	float viewportVy = 0.0f;
+
+	if (viewportX + (viewportWidth / 2) < playerX) {
+		if ((viewportX + viewportWidth) >= world->getWorldWidth());
+		else {
+			viewportVx += MAX_VIEWPORT_AXIS_VELOCITY;
+			viewportMoved = true;
+		}
+	}
+	else if (viewportX + (viewportWidth / 2) > playerX){
+		if (viewportX <= 0);
+		else {
+			viewportVx -= MAX_VIEWPORT_AXIS_VELOCITY;
+			viewportMoved = true;
+		}
+	}
+	if (viewportY + (viewportHeight / 2) < playerY) {
+		if ((viewportY + viewportHeight) >= world->getWorldHeight());
+		else {
+			viewportVy += MAX_VIEWPORT_AXIS_VELOCITY;
+			viewportMoved = true;
+		}
+	}
+	else if (viewportY + (viewportHeight / 2) > playerY){
+		if (viewportY <= 0);
+		else {
+			viewportVy -= MAX_VIEWPORT_AXIS_VELOCITY;
+			viewportMoved = true;
+		}
+	}
+
+	if (viewportMoved) {
+		viewport->moveViewport((int)floor(viewportVx + 0.5f), (int)floor(viewportVy + 0.5f), world->getWorldWidth(), world->getWorldHeight());
+	}
+
+//	if (viewportX == 0);
+//	else if ((viewportX + viewportWidth) >= world->getWorldWidth());
+//	else if (viewportX + (viewportWidth / 2) < playerX) {
+//		viewportVx -= MAX_VIEWPORT_AXIS_VELOCITY;
+//		viewportMoved = true;
+//	}
+//	else {
+//		viewportVx += MAX_VIEWPORT_AXIS_VELOCITY;
+//			viewportMoved = true;
+//	}
+//
+//	if (viewportY == 0);
+//	else if ((viewportY+ viewportHeight) >= world->getWorldHeight());
+//	else if (viewportY + (viewportHeight / 2) < playerY) {
+//		viewportVy -= MAX_VIEWPORT_AXIS_VELOCITY;
+//		viewportMoved = true;
+//	}
+//	else {
+//		viewportVy += MAX_VIEWPORT_AXIS_VELOCITY;
+//		viewportMoved = true;
+//	}
+	
+
+//	if (input->isKeyDown(UP_KEY))
+//	{
+//		viewportVy -= MAX_VIEWPORT_AXIS_VELOCITY;
+//		viewportMoved = true;
+//	}
+//	if (input->isKeyDown(DOWN_KEY))
+//	{
+//		viewportVy += MAX_VIEWPORT_AXIS_VELOCITY;
+//		viewportMoved = true;
+//	}
+//	if (input->isKeyDown(LEFT_KEY))
+//	{
+//		viewportVx -= MAX_VIEWPORT_AXIS_VELOCITY;
+//		viewportMoved = true;
+//	}
+//	if (input->isKeyDown(RIGHT_KEY))
+//	{
+//		viewportVx += MAX_VIEWPORT_AXIS_VELOCITY;
+//		viewportMoved = true;
+//	}
+//	if (viewportMoved)
+//		viewport->moveViewport((int)floor(viewportVx + 0.5f), (int)floor(viewportVy + 0.5f), world->getWorldWidth(), world->getWorldHeight());
+}
+
+
 
 /*
 	processGameData - This method directs game logic to be
