@@ -20,10 +20,12 @@
 #include "sssf\platforms\Windows\WindowsTimer.h"
 
 static const wstring	W_MOUSE_COORDS_TEXT = L"Mouse: (";
-static const int		W_TEXT_X = 200;
+static const int		W_TEXT_X = 800;
 static const int		W_TEXT_Y = 10;
-static const int		W_PATHFINDING_TEXT_X = 800;
+static const int		W_PATHFINDING_TEXT_X = 200;
 static const int		W_PATHFINDING_TEXT_Y = 10;
+static const int		W_QUAD_X = 200;
+static const int		W_QUAD_Y = 100;
 static const wstring	W_ROTATION_IN_RADIANS = L"Paxap Rotation in Radians: ";
 static const wstring	W_ROTATION_IN_DEGREES = L"Paxap Rotation in Degrees: ";
 static const wstring	W_RADIANS = L" radians";
@@ -34,6 +36,7 @@ static const wstring	W_ANT_CENTER_TEXT = L"Paxap Center: (";
 static const wstring	W_ANT_GRID_TEXT = L"Paxap Center Col,Row: (";
 static const wstring	W_ANT_LEFT_TOP_TEXT = L"Paxap Left, Top: (";
 static const wstring	W_ANT_RIGHT_BOTTOM_TEXT = L"Paxap Right, Bottom: (";
+static const wstring	W_NUM_BOTS = L"Number Of Bots : ";
 static const wstring	W_BOTS_HEAP_TEXT = L"Monsters Heap Data: [";
 
 void BugsTextGenerator::appendPathfindingText(Game *game)
@@ -107,10 +110,16 @@ void BugsTextGenerator::appendQuadTreeData(Game* game) {
 	QuadTree *quad_tree = game->getGSM()->getSpriteManager()->getBotsTree();
 	wstringstream wss;
 
-	for (int i = 0; i<21; i++) {
-		
-	}
+	wss << W_NUM_BOTS << game->getGSM()->getSpriteManager()->getNumberOfSprites() << L"\n";
 
+	wss << W_BOTS_HEAP_TEXT;
+
+	for (int i = 0; i<20; i++) {
+		wss << quad_tree->sizeOfNode(i) << L",";
+	}
+	wss << quad_tree->sizeOfNode(20) << L"]";
+
+	quadText.append(wss.str());
 }
 
 
@@ -130,6 +139,8 @@ void BugsTextGenerator::initText(Game *game)
 	GameText *text = game->getText();
 	text->addText(&textToGenerate, W_TEXT_X, W_TEXT_Y, game->getGraphics()->getScreenWidth(), game->getGraphics()->getScreenHeight());
 
+	// QUAD TREE DATA
+	text->addText(&quadText, W_QUAD_X, W_QUAD_Y, game->getGraphics()->getScreenWidth(), game->getGraphics()->getScreenHeight());
 	// LET'S ALSO DISPLAY SOME STUFF FOR PATHFINDING
 	appendPathfindingText(game);
 	text->addText(&pathfindingText, W_PATHFINDING_TEXT_X, W_PATHFINDING_TEXT_Y, game->getGraphics()->getScreenWidth(), game->getGraphics()->getScreenHeight());
@@ -147,6 +158,8 @@ void BugsTextGenerator::updateText(Game *game)
 	// WHAT WE WANT.
 	textToGenerate.clear();
 	appendMouseCoords(game);
+	quadText.clear();
+	appendQuadTreeData(game);
 	pathfindingText.clear();
 	appendPathfindingText(game);
 }

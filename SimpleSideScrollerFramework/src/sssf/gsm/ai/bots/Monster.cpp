@@ -52,4 +52,5 @@ void Monster::think(Game *game)
 	float vY = pp.getVelocityY();
 	pp.setX(pp.getX() + vX);
 	pp.setY(pp.getY() + vY);
+	affixTightAABBBoundingVolume();
 }

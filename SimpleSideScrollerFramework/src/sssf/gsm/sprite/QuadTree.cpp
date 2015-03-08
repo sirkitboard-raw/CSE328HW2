@@ -24,14 +24,12 @@ void QuadTree::initTree(int index, int width, int height, int x, int y) {
 
 void QuadTree::clearTree() {
 	for (int i = 0; i < 21; i++) {
-		botHeap[i]->getBotlist().clear();
+		botHeap[i]->clearList();
 	}
 }
 
 void QuadTree::generateTree(std::list<Bot*> botList) {
-	std::list<Bot*>::iterator botBegin = botList.begin();
-	std::list<Bot*>::iterator botend = botList.end();
-
+	clearTree();
 	for (Bot* bot : botList) {
 		addToTree(0, bot);
 	}
@@ -39,10 +37,10 @@ void QuadTree::generateTree(std::list<Bot*> botList) {
 
 
 void QuadTree::addToTree(int index, Bot* bot) {
-	if (index>5) {
+	if (index>=5 && index<21) {
 		botHeap[index]->addBot(bot);
 	}
-	else {
+	else if(index<21){
 		float left = bot->getBoundingVolume()->getLeft();
 		float right = bot->getBoundingVolume()->getRight();
 		float top = bot->getBoundingVolume()->getTop();
@@ -54,10 +52,10 @@ void QuadTree::addToTree(int index, Bot* bot) {
 		else if (left > botHeap[index]->getCenterX() && bottom < botHeap[index]->getCenterY()) {
 			addToTree(4 * index + 2, bot);
 		}
-		if (left > botHeap[index]->getCenterX() && top > botHeap[index]->getCenterY()) {
+		else if (left > botHeap[index]->getCenterX() && top > botHeap[index]->getCenterY()) {
 			addToTree(4 * index + 3, bot);
 		}
-		if (right < botHeap[index]->getCenterX() && top > botHeap[index]->getCenterY()) {
+		else if (right < botHeap[index]->getCenterX() && top > botHeap[index]->getCenterY()) {
 			addToTree(4 * index + 4, bot);
 		}
 		else {
@@ -66,4 +64,19 @@ void QuadTree::addToTree(int index, Bot* bot) {
 	}
 }
 
-
+std::list<Bot*> QuadTree::getBotsInViewport(Viewport* viewport) {
+	std::list<Bot*> foundBots;
+	int x = viewport->getViewportX();
+	int y = viewport->getViewportY();
+	int w = viewport->getViewportWidth();
+	int h = viewport->getViewportHeight();
+	for (int i = 0; i < 21; i++) {
+		if (x>botHeap[i]->getEndingX() || (x + w) < botHeap[i]->getStartingX());
+		else if (y > botHeap[i]->getEndingY() || (y + h) < botHeap[i]->getStartingY());
+		else {
+			for (Bot * bot : botHeap[i]->getBotlist()) {
+				
+			}
+		}
+	}
+}

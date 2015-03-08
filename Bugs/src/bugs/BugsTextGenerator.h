@@ -20,6 +20,7 @@ private:
 	// THIS IS THE TEXT THIS OBJECT WILL UPDATE EACH FRAME
 	wstring textToGenerate;
 	wstring pathfindingText;
+	wstring quadText;
 
 public:
 	// NOTHING TO INITIALIZE OR DESTROY

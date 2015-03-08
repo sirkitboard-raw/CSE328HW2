@@ -47,6 +47,14 @@ void BugsKeyEventHandler::handleKeyEvents(Game *game)
 	// IF THE GAME IS IN PROGRESS
 	if (gsm->isGameInProgress())
 	{
+
+
+		gsm->getSpriteManager()->fillBotTree();
+
+		if (input->isKeyDownForFirstTime(Q_KEY)) {
+			isLocked = !isLocked;
+		}
+
 		if (input->isKeyDownForFirstTime(P_KEY))
 		{
 			gsm->getPhysics()->togglePhysics();
@@ -147,7 +155,7 @@ void BugsKeyEventHandler::handleKeyEvents(Game *game)
 		{
 			game->repositionViewport(12.f);
 		}
-		else {
+		else if(isLocked){
 			game->repositionViewport(4.0f);
 		}
 		

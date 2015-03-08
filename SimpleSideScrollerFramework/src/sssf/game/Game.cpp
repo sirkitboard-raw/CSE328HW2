@@ -136,7 +136,6 @@ void Game::runGameLoop()
 			// USE THE INPUT TO UPDATE THE GAME
 			processGameData();
 			// AND RENDER THE GAME
-			gsm->getSpriteManager()->fillBotTree();
 			graphics->renderGame(this);
 		}
 	}

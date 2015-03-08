@@ -57,11 +57,15 @@ public:
 		return botList;
 	}
 
+	void clearList() {
+		botList.clear();
+	}
+
 	void addBot(Bot * bot) {
 		botList.push_back(bot);
 	}
 
-	int size() {
+	int getSize() {
 		return botList.size();
 	}
 

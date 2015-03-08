@@ -83,6 +83,7 @@ const unsigned int T_KEY = (unsigned int)'T';
 const unsigned int L_KEY = (unsigned int)'L';
 const unsigned int F_KEY = (unsigned int)'F';
 const unsigned int R_KEY = (unsigned int)'R';
+const unsigned int Q_KEY = (unsigned int)'Q';
 const unsigned int UP_KEY = VK_UP;
 const unsigned int DOWN_KEY = VK_DOWN;
 const unsigned int LEFT_KEY = VK_LEFT;
@@ -92,6 +93,7 @@ const unsigned int PLUS_KEY = VK_OEM_PLUS;
 const unsigned int ADD_KEY = VK_ADD;
 const unsigned int SUB_KEY = VK_SUBTRACT;
 const unsigned int MINUS_KEY = VK_OEM_MINUS;
+static bool isLocked = false;
 
 static std::random_device rd2;
 static std::mt19937 gen2(rd2());
