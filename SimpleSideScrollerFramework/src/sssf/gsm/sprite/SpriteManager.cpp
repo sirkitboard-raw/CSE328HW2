@@ -71,10 +71,12 @@ void SpriteManager::addSpriteItemsToRenderList(	Game *game)
 		// ADD THE PLAYER SPRITE
 		addSpriteToRenderList(&player, renderList, viewport);
 
+		list<Bot*> scopedBots = botTree.getBotsInViewport(viewport);
+		numBotsInViewport = scopedBots.size();
 		// NOW ADD THE REST OF THE SPRITES
 		list<Bot*>::iterator botIterator;
-		botIterator = bots.begin();
-		while (botIterator != bots.end())
+		botIterator = scopedBots.begin();
+		while (botIterator != scopedBots.end())
 		{			
 			Bot *bot = (*botIterator);
 			addSpriteToRenderList(bot, renderList, viewport);

@@ -20,12 +20,12 @@
 #include "sssf\platforms\Windows\WindowsTimer.h"
 
 static const wstring	W_MOUSE_COORDS_TEXT = L"Mouse: (";
-static const int		W_TEXT_X = 800;
+static const int		W_TEXT_X = 200;
 static const int		W_TEXT_Y = 10;
-static const int		W_PATHFINDING_TEXT_X = 200;
+static const int		W_PATHFINDING_TEXT_X = 800;
 static const int		W_PATHFINDING_TEXT_Y = 10;
 static const int		W_QUAD_X = 200;
-static const int		W_QUAD_Y = 100;
+static const int		W_QUAD_Y = 70;
 static const wstring	W_ROTATION_IN_RADIANS = L"Paxap Rotation in Radians: ";
 static const wstring	W_ROTATION_IN_DEGREES = L"Paxap Rotation in Degrees: ";
 static const wstring	W_RADIANS = L" radians";
@@ -37,6 +37,7 @@ static const wstring	W_ANT_GRID_TEXT = L"Paxap Center Col,Row: (";
 static const wstring	W_ANT_LEFT_TOP_TEXT = L"Paxap Left, Top: (";
 static const wstring	W_ANT_RIGHT_BOTTOM_TEXT = L"Paxap Right, Bottom: (";
 static const wstring	W_NUM_BOTS = L"Number Of Bots : ";
+static const wstring	W_NUM_BOTS_OVER = L"Number Of Bots in Overlapping Nodes : ";
 static const wstring	W_BOTS_HEAP_TEXT = L"Monsters Heap Data: [";
 
 void BugsTextGenerator::appendPathfindingText(Game *game)
@@ -111,7 +112,7 @@ void BugsTextGenerator::appendQuadTreeData(Game* game) {
 	wstringstream wss;
 
 	wss << W_NUM_BOTS << game->getGSM()->getSpriteManager()->getNumberOfSprites() << L"\n";
-
+	wss << W_NUM_BOTS_OVER << game->getGSM()->getSpriteManager()->getNumBotsInView() << L"\n";
 	wss << W_BOTS_HEAP_TEXT;
 
 	for (int i = 0; i<20; i++) {

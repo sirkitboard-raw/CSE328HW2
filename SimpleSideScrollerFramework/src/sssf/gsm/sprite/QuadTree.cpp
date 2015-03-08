@@ -75,8 +75,9 @@ std::list<Bot*> QuadTree::getBotsInViewport(Viewport* viewport) {
 		else if (y > botHeap[i]->getEndingY() || (y + h) < botHeap[i]->getStartingY());
 		else {
 			for (Bot * bot : botHeap[i]->getBotlist()) {
-				
+				foundBots.push_back(bot);
 			}
 		}
 	}
+	return foundBots;
 }

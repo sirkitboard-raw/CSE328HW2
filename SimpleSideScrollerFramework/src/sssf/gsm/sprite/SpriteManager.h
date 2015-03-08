@@ -43,6 +43,8 @@ private:
 	// WE MAY BE RENDERING AN ORTHOGRAPHIC MAP OR AN ISOMETRIC ONE
 	GridPathfinder *pathfinder;
 
+	int numBotsInViewport;
+
 public:
 	// NOTHING TO INIT OR DESTROY
 	SpriteManager()		{}
@@ -56,6 +58,7 @@ public:
 	GridPathfinder*			getPathfinder()			{ return pathfinder;			}
 	QuadTree*				getBotsTree()			{ return &botTree;				}		
 	void					fillBotTree()			{ botTree.generateTree(bots);	}
+	int						getNumBotsInView()		{ return numBotsInViewport;		}
 
 	// METHODS DEFINED IN SpriteManager.cpp
 	void				addBot(Bot *botToAdd);
