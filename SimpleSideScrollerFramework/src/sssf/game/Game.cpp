@@ -136,7 +136,7 @@ void Game::runGameLoop()
 			// USE THE INPUT TO UPDATE THE GAME
 			processGameData();
 			// AND RENDER THE GAME
-
+			gsm->getSpriteManager()->fillBotTree();
 			graphics->renderGame(this);
 		}
 	}
@@ -145,6 +145,8 @@ void Game::runGameLoop()
 void Game::repositionViewport(float speed) {
 	Viewport *viewport = getGUI()->getViewport();
 	World *world = getGSM()->getWorld();
+	int worldHeight = world->getWorldHeight();
+	int worldw_i = world->getWorldWidth();
 	int viewportX = viewport->getViewportX();
 	int viewportY = viewport->getViewportY();
 	SpriteManager *spriteManager = getGSM()->getSpriteManager();

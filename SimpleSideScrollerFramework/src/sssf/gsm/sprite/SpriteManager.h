@@ -18,6 +18,7 @@
 #include "sssf\gsm\sprite\AnimatedSpriteType.h"
 #include "sssf\gsm\sprite\TopDownSprite.h"
 #include "sssf\gsm\ai\pathfinding\GridPathfinder.h"
+#include "sssf/gsm/sprite/QuadTree.h"
 
 class SpriteManager
 {
@@ -29,6 +30,7 @@ private:
 	// THESE ARE THE BOTS IN THE GAME, LIKE ENEMIES, ROCKETS, OR ANYTHING
 	// THAT MOVES AROUND AND IS NOT THE PLAYER
 	list<Bot*> bots;
+	QuadTree botTree;
 
 	// AND THIS IS THE PLAYER. AS-IS, WE ONLY ALLOW FOR ONE PLAYER AT A TIME
 	TopDownSprite player;
@@ -47,11 +49,13 @@ public:
 	~SpriteManager()	{}
 
 	// INLINED ACCESSOR METHODS
-	int						getNumberOfSprites()	{ return bots.size();		}
-	TopDownSprite*			getPlayer()				{ return &player;			}
-	list<Bot*>::iterator	getBotsIterator()		{ return bots.begin();		}
-	list<Bot*>::iterator	getEndOfBotsIterator()	{ return bots.end();		}
-	GridPathfinder*			getPathfinder()			{ return pathfinder;		}
+	int						getNumberOfSprites()	{ return bots.size();			}
+	TopDownSprite*			getPlayer()				{ return &player;				}
+	list<Bot*>::iterator	getBotsIterator()		{ return bots.begin();			}
+	list<Bot*>::iterator	getEndOfBotsIterator()	{ return bots.end();			}
+	GridPathfinder*			getPathfinder()			{ return pathfinder;			}
+	QuadTree*				getBotsTree()			{ return &botTree;				}		
+	void					fillBotTree()			{ botTree.generateTree(bots);	}
 
 	// METHODS DEFINED IN SpriteManager.cpp
 	void				addBot(Bot *botToAdd);

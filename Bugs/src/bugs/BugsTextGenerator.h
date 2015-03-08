@@ -30,6 +30,7 @@ public:
 	void appendMouseCoords(Game *game);
 	void appendAntRotationInfo(Game *game);
 	void appendPathfindingText(Game *game);
+	void appendQuadTreeData(Game *game);
 	void initText(Game *game);
 	void updateText(Game *game);
 };

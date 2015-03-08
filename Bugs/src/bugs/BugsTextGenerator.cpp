@@ -24,16 +24,17 @@ static const int		W_TEXT_X = 200;
 static const int		W_TEXT_Y = 10;
 static const int		W_PATHFINDING_TEXT_X = 800;
 static const int		W_PATHFINDING_TEXT_Y = 10;
-static const wstring	W_ROTATION_IN_RADIANS = L"Ant Rotation in Radians: ";
-static const wstring	W_ROTATION_IN_DEGREES = L"Ant Rotation in Degrees: ";
+static const wstring	W_ROTATION_IN_RADIANS = L"Paxap Rotation in Radians: ";
+static const wstring	W_ROTATION_IN_DEGREES = L"Paxap Rotation in Degrees: ";
 static const wstring	W_RADIANS = L" radians";
 static const wstring	W_DEGREES = L" degrees";
 static const wstring	SIN_THETA = L"sin(theta): ";
 static const wstring	COS_THETA = L"cos(theta): ";
-static const wstring	W_ANT_CENTER_TEXT = L"Ant Center: (";
-static const wstring	W_ANT_GRID_TEXT = L"Ant Center Col,Row: (";
-static const wstring	W_ANT_LEFT_TOP_TEXT = L"Ant Left, Top: (";
-static const wstring	W_ANT_RIGHT_BOTTOM_TEXT = L"Ant Right, Bottom: (";
+static const wstring	W_ANT_CENTER_TEXT = L"Paxap Center: (";
+static const wstring	W_ANT_GRID_TEXT = L"Paxap Center Col,Row: (";
+static const wstring	W_ANT_LEFT_TOP_TEXT = L"Paxap Left, Top: (";
+static const wstring	W_ANT_RIGHT_BOTTOM_TEXT = L"Paxap Right, Bottom: (";
+static const wstring	W_BOTS_HEAP_TEXT = L"Monsters Heap Data: [";
 
 void BugsTextGenerator::appendPathfindingText(Game *game)
 {
@@ -102,6 +103,17 @@ void BugsTextGenerator::appendAntRotationInfo(Game *game)
 	textToGenerate.append(wss.str());
 }
 
+void BugsTextGenerator::appendQuadTreeData(Game* game) {
+	QuadTree *quad_tree = game->getGSM()->getSpriteManager()->getBotsTree();
+	wstringstream wss;
+
+	for (int i = 0; i<21; i++) {
+		
+	}
+
+}
+
+
 /*
 	initText - Provides an example of how to render text to our screen every frame,
 	allowing for the text to continually change. This method adds a text object
@@ -135,8 +147,6 @@ void BugsTextGenerator::updateText(Game *game)
 	// WHAT WE WANT.
 	textToGenerate.clear();
 	appendMouseCoords(game);
-	appendAntRotationInfo(game);
-
 	pathfindingText.clear();
 	appendPathfindingText(game);
 }

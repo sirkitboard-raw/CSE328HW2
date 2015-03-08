@@ -145,10 +145,10 @@ void BugsKeyEventHandler::handleKeyEvents(Game *game)
 		
 		if (input->isKeyDown(SPACE_KEY))
 		{
-			game->repositionViewport(10.f);
+			game->repositionViewport(12.f);
 		}
 		else {
-			game->repositionViewport(3.0f);
+			game->repositionViewport(4.0f);
 		}
 		
 		
