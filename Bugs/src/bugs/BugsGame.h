@@ -93,7 +93,7 @@ const unsigned int PLUS_KEY = VK_OEM_PLUS;
 const unsigned int ADD_KEY = VK_ADD;
 const unsigned int SUB_KEY = VK_SUBTRACT;
 const unsigned int MINUS_KEY = VK_OEM_MINUS;
-static bool isLocked = false;
+static bool isLocked = true;
 
 static std::random_device rd2;
 static std::mt19937 gen2(rd2());
